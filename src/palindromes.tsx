@@ -1,10 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 
-export class Palindromes extends React.Component {
+export class Palindromes extends React.Component<
+  {},
+  { palindromeInput: string }
+> {
   constructor(props: {}) {
     super(props);
-    this.state = {};
+    this.state = {
+      palindromeInput: "",
+    };
   }
 
   render() {
@@ -12,7 +16,9 @@ export class Palindromes extends React.Component {
       <div className="palindromes">
         <h2>Palindromes</h2>
         <div className="pali-container">
-          <textarea className="the-palindrome"></textarea>
+          <textarea className="the-palindrome">
+            {this.state.palindromeInput}
+          </textarea>
           <div className="pali-container2">
             <button className="get-palindrome">
               Palindrome

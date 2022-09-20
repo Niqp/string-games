@@ -87,6 +87,10 @@ input {
   background-color: #e5e5e5;
 }
 
+textarea {
+  min-height: 180px;
+}
+
 .desc {
   margin-top: 15px;
   max-width: 350px;
@@ -103,7 +107,7 @@ input {
 
 .pali-container {
   display: flex;
-  gap: 15px;
+  gap: 10px;
 }
 
 .the-palindrome {
@@ -128,6 +132,9 @@ input {
 /* Clock */
 
 .clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .time {

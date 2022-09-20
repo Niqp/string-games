@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 
 export class WordsInside extends React.Component {
   constructor(props: {}) {
