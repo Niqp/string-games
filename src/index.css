@@ -1,13 +1,259 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: "carmelit_boldbold";
+  src: url("fonts/carmelit/carmelitbold.eot");
+  src: url("fonts/carmelit/carmelitbold.eot?#iefix") format("embedded-opentype"),
+    url("fonts/carmelit/carmelitbold.woff") format("woff"),
+    url("fonts/carmelit/carmelitbold.ttf") format("truetype"),
+    url("fonts/carmelit/carmelitbold.svg#carmelit_boldbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "carmelit_regularregular";
+  src: url("fonts/carmelit/carmelitregular.eot");
+  src: url("fonts/carmelit/carmelitregular.eot?#iefix")
+      format("embedded-opentype"),
+    url("fonts/carmelit/carmelitregular.woff") format("woff"),
+    url("fonts/carmelit/carmelitregular.ttf") format("truetype"),
+    url("fonts/carmelit/carmelitregular.svg#carmelit_regularregular")
+      format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --font-and-border-color: #000;
+  --button-ta-color: #e07a5f;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: #003049;
+  /* background-image: url("./img/stars_above.jpg"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: var(--font-and-border-color);
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 45px;
+  margin: 45px;
+}
+
+.dashboard > div {
+  /* max-width: 700px; */
+  /* margin: 0 30px; */
+  border: 6px solid #e07a5f;
+  background-color: #f4f1de;
+  border-radius: 30px;
+  padding: 15px;
+  min-height: 386px;
+  min-width: 362px;
+}
+
+h2 {
+  font-family: "carmelit_boldbold", sans-serif;
+  color: var(--font-and-border-color);
+}
+
+button,
+textarea,
+input {
+  vertical-align: bottom;
+  margin: 0.4vw;
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid #e07a5f;
+  background-color: var(--button-ta-color);
+  color: var(--font-and-border-color);
+  resize: none;
+}
+
+textarea,
+input {
+  background-color: #e5e5e5;
+}
+
+.desc {
+  margin-top: 15px;
+  max-width: 350px;
+  max-height: 50px;
+}
+
+/* Palindromes */
+
+.palindromes {
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 1; */
+}
+
+.pali-container {
+  display: flex;
+  gap: 15px;
+}
+
+.the-palindrome {
+  /* flex-grow: 2; */
+}
+
+.pali-container2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.yes-no,
+.res-calc,
+.your-points,
+.comp-points,
+.anagram-reaction {
+  letter-spacing: 0.2vw;
+  text-shadow: 0 0 0.5vw #fff, 0 0 1vw #fff, 0 0 1.5vw #e60073;
+}
+
+/* Clock */
+
+.clock {
+}
+
+.time {
+  font-size: 2vw;
+  letter-spacing: 0.2vw;
+}
+
+.date {
+  font-size: 1.5vw;
+  letter-spacing: 0.2vw;
+}
+
+/* Gematria */
+
+.gematria {
+  /* flex-grow: 1; */
+  display: flex;
+  flex-direction: column;
+}
+
+.gematria > h2,
+.gem-input {
+  direction: rtl;
+}
+
+.gem-container {
+  direction: rtl;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.res-calc {
+  line-height: 3vw;
+}
+
+/* words inside */
+.words-inside {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col.one {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  /* flex-basis: 0; */
+}
+
+.col.two {
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 1; */
+}
+
+.col.three {
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 1; */
+}
+
+.y-words-div,
+.c-words-div {
+  height: 82%;
+  overflow-y: scroll;
+  width: 95%;
+  display: none;
+  border: 1px dotted #ddd;
+  background-color: rgba(100, 149, 237, 0.4);
+}
+
+.words-inside > .one > p,
+.anagrams .desc {
+  font-size: 0.8rem;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.red {
+  color: red;
+}
+
+/* Anagrams */
+
+.anagrams {
+  display: flex;
+  flex-direction: column;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+label {
+  word-wrap: break-word;
+  text-align: center;
+  padding: 10px;
+}
+
+.anagram-container1,
+.anagram-container2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.the-answer,
+#comp-anagram {
+  display: none;
+}
+
+.anagram-reaction {
+  word-wrap: break-word;
+}
+
+.check-anagram {
+  max-width: 200px;
+}
+
+.quotes {
+  display: flex;
+  flex-direction: column;
 }
