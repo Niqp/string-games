@@ -8,14 +8,17 @@ export class Palindromes extends React.Component<
   {
     palindromeInput: string;
     isAPalindrome: string;
+    shadowAnimation: boolean;
   }
 > {
   examplePalindromes: string[] = [];
+  shadowAnimationState: NodeJS.Timeout | undefined;
   constructor(props: {}) {
     super(props);
     this.state = {
       palindromeInput: "",
       isAPalindrome: "",
+      shadowAnimation: false,
     };
     this.handleTextAreaChange = this.handleTextAreaChange.bind(this);
     this.handleCheckPalindromePress =
@@ -24,6 +27,7 @@ export class Palindromes extends React.Component<
       this.handleExamplePalindromePress.bind(this);
   }
 
+  
   handleTextAreaChange(ev: React.ChangeEvent) {
     if (ev.target instanceof HTMLTextAreaElement) {
       this.setState({ palindromeInput: ev.target.value });
@@ -32,19 +36,36 @@ export class Palindromes extends React.Component<
 
   handleExamplePalindromePress() {
     const length = this.examplePalindromes.length;
-    console.log(length);
     if (length === 0) {
       this.examplePalindromes = palindromes.slice(0);
     }
     const index = getRandomInt(0, length - 1);
     this.setState({ palindromeInput: this.examplePalindromes[index] });
-    this.examplePalindromes.splice(index,1);
+    this.examplePalindromes.splice(index, 1);
   }
 
   handleCheckPalindromePress() {
-    this.setState({isAPalindrome: checkPalindrome(this.state.palindromeInput) ? 'Yes!' : 'No :('})
-    console.log(checkPalindrome(this.state.palindromeInput));
-    checkPalindrome(this.state.palindromeInput);
+    const playAnimation = () => {
+      this.setState({
+        isAPalindrome: checkPalindrome(this.state.palindromeInput)
+          ? "Yes!"
+          : "No :(",
+          shadowAnimation: true,
+      });
+      this.shadowAnimationState = setTimeout(() => {this.setState({shadowAnimation: false})}, 2000);
+    }
+
+    if (this.shadowAnimationState && this.state.shadowAnimation === true) {
+      clearTimeout(this.shadowAnimationState);
+      this.setState({
+        isAPalindrome: checkPalindrome(this.state.palindromeInput)
+        ? "Yes!"
+        : "No :(",
+        shadowAnimation: false});
+        setTimeout(playAnimation,10);
+        return;
+    }
+    playAnimation();
   }
 
   render() {
@@ -73,7 +94,7 @@ export class Palindromes extends React.Component<
               Is this
               <br />a Palindrome?
             </button>
-            <div className="yes-no">{this.state.isAPalindrome}</div>
+            <div className={`yes-no ` + (this.state.shadowAnimation ? 'shadow-animation' : '')}>{this.state.isAPalindrome}</div>
           </div>
         </div>
         <p className="desc">

@@ -22,6 +22,15 @@
   font-style: normal;
 }
 
+@keyframes flash {
+  0% {text-shadow: none;}
+  50% {text-shadow: 0 0 1px #003049,
+    0 0 5px #003049,
+    0 0 15px #003049,
+    0 0 25px #003049;}
+  100% {text-shadow: none;}
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -33,15 +42,14 @@
 }
 
 html {
+  /* height: 100%; */
   --font-and-border-color: #000;
   --button-ta-color: #e07a5f;
 }
 
 body {
-  height: 100vh;
-  width: 100%;
-  background-color: #003049;
-  /* background-image: url("./img/stars_above.jpg"); */
+  min-height: 100vh;
+  background: linear-gradient(0deg,rgba(1,32,51,1) 0%, rgba(0,48,73,1) 100%);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -139,21 +147,27 @@ textarea {
   padding: 15px;
 }
 
+.shadow-animation {
+  animation-name: flash;
+  animation-duration: 2s;
+}
+
 /* Clock */
 
 .clock {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .time {
-  font-size: 2vw;
+  font-size: 5vh;
   letter-spacing: 0.2vw;
 }
 
 .date {
-  font-size: 1.5vw;
+  font-size: 3.5vh;
   letter-spacing: 0.2vw;
 }
 
