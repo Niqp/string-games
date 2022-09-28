@@ -1,6 +1,5 @@
-export const vocab = [
+export const VOCAB = [
   "ash",
-  "astonishment",
   "nose",
   "note",
   "son",
@@ -11,7 +10,9 @@ export const vocab = [
   "tone",
 ];
 
-export const palindromes = [
+export const MASTER_WORDS = ["astonishment"];
+
+export const PALINDROMES = [
   "level",
   "Anna",
   "racecar",
@@ -44,7 +45,7 @@ export const palindromes = [
   "ילד כותב בתוך דלי",
 ];
 
-export const quotes = [
+export const QUOTES = [
   '"Dude, suckin\' at something is the first step at being sorta good at something."<br>-  Jake <small><em>(Adventure Time)</em></small>',
   '"Either I will find a way, or I will make one."<br> - Philip Sidney',
   '"Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time."<br>- Thomas A. Edison',
@@ -55,7 +56,7 @@ export const quotes = [
   '"If you always put limit on everything you do, physical or anything else. It will spread into your work and into your life. There are no limits. There are only plateaus, and you must not stay there, you must go beyond them."<br>- Bruce Lee',
 ];
 
-export const anagrams = [
+export const ANAGRAMS = [
   "ape",
   "blow",
   "bowl",

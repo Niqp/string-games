@@ -8,9 +8,9 @@ export const checkPalindrome = (palindrome: string) => {
 
   function isLetter(char: string) {
     return (
-      (char < "z" && char > "A") ||
-      (char < "я" && char > "А") ||
-      (char > String.fromCharCode(1488) && char < String.fromCharCode(1514))
+      (char <= "z" && char >= "A") ||
+      (char <= "я" && char >= "А") ||
+      (char >= String.fromCharCode(1488) && char <= String.fromCharCode(1514))
     );
   }
 

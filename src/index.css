@@ -23,12 +23,16 @@
 }
 
 @keyframes flash {
-  0% {text-shadow: none;}
-  50% {text-shadow: 0 0 1px #003049,
-    0 0 5px #003049,
-    0 0 15px #003049,
-    0 0 25px #003049;}
-  100% {text-shadow: none;}
+  0% {
+    text-shadow: none;
+  }
+  50% {
+    text-shadow: 0 0 1px #e07a5f, 0 0 5px #e07a5f, 0 0 15px #e07a5f,
+      0 0 25px #e07a5f;
+  }
+  100% {
+    text-shadow: none;
+  }
 }
 
 * {
@@ -49,7 +53,11 @@ html {
 
 body {
   min-height: 100vh;
-  background: linear-gradient(0deg,rgba(1,32,51,1) 0%, rgba(0,48,73,1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(1, 32, 51, 1) 0%,
+    rgba(0, 48, 73, 1) 100%
+  );
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -104,9 +112,31 @@ input:focus {
   outline-color: #003049;
 }
 
-
 textarea {
   min-height: 180px;
+}
+
+.your-words,
+.comp-words {
+  min-height: 180px;
+  min-width: 200px;
+  outline-color: #003049;
+  background-color: #e5e5e5;
+  vertical-align: bottom;
+  margin: 0.4vw;
+  padding: 15px;
+  border-radius: 15px;
+  border: 2px solid #e07a5f;
+  color: var(--font-and-border-color);
+  resize: none;
+}
+
+.red-letter {
+  color: red;
+}
+
+.crossed-word {
+  text-decoration: line-through;
 }
 
 .desc {
@@ -126,10 +156,6 @@ textarea {
 .pali-container {
   display: flex;
   gap: 10px;
-}
-
-.the-palindrome {
-  /* flex-grow: 2; */
 }
 
 .pali-container2 {
