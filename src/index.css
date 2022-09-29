@@ -296,17 +296,13 @@ label {
   align-items: center;
 }
 
-.the-answer,
-#comp-anagram {
-  display: none;
-}
-
 .anagram-reaction {
   word-wrap: break-word;
 }
 
 .check-anagram {
   max-width: 200px;
+  align-self: center;
 }
 
 .quotes {

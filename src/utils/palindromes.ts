@@ -1,21 +1,21 @@
-export const checkPalindrome = (palindrome: string) => {
-  const HEBREW_ENDINGS: { [key: string]: string } = {
-    ך: "כ",
-    ם: "מ",
-    ן: "נ",
-    ץ: "צ",
-  };
+const HEBREW_ENDINGS: { [key: string]: string } = {
+  ך: "כ",
+  ם: "מ",
+  ן: "נ",
+  ץ: "צ",
+};
 
+export function replaceSpecialHebrewLetter(str: string) {
+  return HEBREW_ENDINGS[str] || str;
+}
+
+export const checkPalindrome = (palindrome: string) => {
   function isLetter(char: string) {
     return (
       (char <= "z" && char >= "A") ||
       (char <= "я" && char >= "А") ||
       (char >= String.fromCharCode(1488) && char <= String.fromCharCode(1514))
     );
-  }
-
-  function replaceSpecialHebrewLetter(str: string) {
-    return HEBREW_ENDINGS[str] || str;
   }
 
   let i = 0;
