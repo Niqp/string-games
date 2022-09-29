@@ -142,7 +142,6 @@ textarea {
 .desc {
   margin-top: 15px;
   max-width: 350px;
-  max-height: 50px;
 }
 
 /* Palindromes */
@@ -313,4 +312,5 @@ label {
 .quotes {
   display: flex;
   flex-direction: column;
+  max-width: 362px;
 }
