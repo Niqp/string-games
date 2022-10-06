@@ -69,7 +69,6 @@ export function Anagrams() {
         readOnly={true}
         value={anagramState}
       />
-      <p className="anagram-reaction"></p>
       <p className="desc">
         Press the button "New Anagram". Try as hard as you can. Have you
         succeded in finding anagram? (If there is more than one, type them with
