@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/string-games/static/css/main.9a235251.css",
+    "main.js": "/string-games/static/js/main.47e298ea.js",
+    "static/media/carmelitregular.svg": "/string-games/static/media/carmelitregular.dc630ae6f15d965030f3.svg",
+    "static/media/carmelitbold.svg": "/string-games/static/media/carmelitbold.d606d7c44dfca098c4ce.svg",
+    "static/media/carmelitregular.ttf": "/string-games/static/media/carmelitregular.e267784def8d3eaeeaea.ttf",
+    "static/media/carmelitbold.ttf": "/string-games/static/media/carmelitbold.4bacbe6887a2efea1fb3.ttf",
+    "static/media/carmelitregular.woff": "/string-games/static/media/carmelitregular.aeaaec4cd12e3353ead2.woff",
+    "static/media/carmelitbold.woff": "/string-games/static/media/carmelitbold.cfa642083a27d8db508a.woff",
+    "static/media/carmelitregular.eot": "/string-games/static/media/carmelitregular.372271712bfae148be7a.eot",
+    "static/media/carmelitbold.eot": "/string-games/static/media/carmelitbold.482d79d5b1e0a953357c.eot",
+    "index.html": "/string-games/index.html",
+    "main.9a235251.css.map": "/string-games/static/css/main.9a235251.css.map",
+    "main.47e298ea.js.map": "/string-games/static/js/main.47e298ea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a235251.css",
+    "static/js/main.47e298ea.js"
+  ]
+}
